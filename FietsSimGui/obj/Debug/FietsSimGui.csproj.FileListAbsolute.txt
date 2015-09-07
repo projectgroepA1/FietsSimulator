@@ -1,0 +1,9 @@
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\bin\Debug\FietsSimGui.exe.config
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\bin\Debug\FietsSimGui.exe
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\bin\Debug\FietsSimGui.pdb
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.Form1.resources
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.Properties.Resources.resources
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.csproj.GenerateResource.Cache
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.exe
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.pdb

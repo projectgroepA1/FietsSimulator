@@ -7,3 +7,4 @@
 \\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.csproj.GenerateResource.Cache
 \\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.exe
 \\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.pdb
+\\psf\Home\Documents\avans\jaar2\periode1\project\FietsSimGui\FietsSimGui\obj\Debug\FietsSimGui.SimulatorViewForm.resources

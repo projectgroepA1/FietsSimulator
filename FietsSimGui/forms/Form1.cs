@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,22 +15,18 @@ namespace FietsSimGui
     {
         //Port connection
         private SerialConnection serialConnection;
-        private delegate void SetReceiveBoxDelegate(string text);
-
 
         public Form1()
         {
             InitializeComponent();
-            this.serialConnection = new SerialConnection(comPortBox, this);
+            this.serialConnection = new SerialConnection();
+
+            foreach(string portName in this.serialConnection.GetAvailableCOMPorts())
+            {
+                this.comPortBox.Items.Add(portName);
+            }
         }
 
-        public void SetReceiveBox(string s)
-        {
-            if (receiveBox.InvokeRequired)
-                Invoke(new SetReceiveBoxDelegate(SetReceiveBox), new object[] { s });
-            else
-                receiveBox.Text += s;
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,18 +35,17 @@ namespace FietsSimGui
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.serialConnection.setPort("COM1");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string selected = comPortBox.GetItemText(comPortBox.SelectedItem);
-            this.serialConnection.setPort(selected);
-        }
-
-        private void sendText_Click(object sender, EventArgs e)
-        {
-            this.serialConnection.writeToPort(textBox.Text);
+            SerialPort port = this.serialConnection.setPort(selected);
+            //change screen
+            SimulatorViewForm simulatorView = new SimulatorViewForm(port);
+            simulatorView.Show();
+            this.Hide();
         }
     }
 }

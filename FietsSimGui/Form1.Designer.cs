@@ -34,6 +34,7 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.sendText = new System.Windows.Forms.Button();
             this.receiveBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // test
@@ -94,11 +95,21 @@
             this.receiveBox.Size = new System.Drawing.Size(300, 106);
             this.receiveBox.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(385, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 665);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.receiveBox);
             this.Controls.Add(this.sendText);
             this.Controls.Add(this.textBox);
@@ -121,6 +132,7 @@
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button sendText;
         private System.Windows.Forms.TextBox receiveBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

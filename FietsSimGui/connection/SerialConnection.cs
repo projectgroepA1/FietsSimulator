@@ -8,7 +8,7 @@ namespace FietsSimGui
     class SerialConnection
     {
         private SerialPort port { get; set; }
-        
+
         public SerialConnection() {
             //print ports
             string[] names = SerialPort.GetPortNames();
@@ -20,11 +20,13 @@ namespace FietsSimGui
             Console.Write("Choose one:");
         }
 
+        //return the available port names
         public string[] GetAvailableCOMPorts()
         {
             return SerialPort.GetPortNames(); ;
         }
 
+        //return a Port with the name of portName, which is opened.
         public SerialPort setPort(String portName)
         {
             this.port = new SerialPort(portName);
@@ -33,23 +35,6 @@ namespace FietsSimGui
 
             //this.port.Write("test");
             return this.port;
-        }
-
-        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
-        {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
-            Console.WriteLine("Data Received:");
-            Console.Write(indata);
-            //receiveBox.Text += indata;
-
-            //form.SetReceiveBox(indata);
-        }
-
-
-        public void writeToPort(String text)
-        {
-            this.port.Write(text);
         }
     }
 }

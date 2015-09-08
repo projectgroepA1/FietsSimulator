@@ -27,20 +27,17 @@ namespace FietsSimGui
             }
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //get the selected port name
             string selected = comPortBox.GetItemText(comPortBox.SelectedItem);
+
+            //connect to the port
             SerialPort port = this.serialConnection.setPort(selected);
             //change screen
             SimulatorViewForm simulatorView = new SimulatorViewForm(port);

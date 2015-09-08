@@ -40,7 +40,6 @@
             this.test.Size = new System.Drawing.Size(119, 50);
             this.test.TabIndex = 0;
             this.test.Text = "COM ports";
-            this.test.Click += new System.EventHandler(this.label1_Click);
             // 
             // comPortBox
             // 

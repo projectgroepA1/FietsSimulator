@@ -18,20 +18,25 @@ namespace FietsSimGui
 
         public SimulatorViewForm(SerialPort port) : base()
         {
+            //set the port
             this.port = port;
             InitializeComponent();
 
+            //add a receivedEventHandler
             this.port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
         public void SetReceiveBox(string s)
         {
+            //write text to the receiveBod
             if (receiveBox.InvokeRequired)
+                //invoke the SetReceiveBoxDelegate method with the currect method as a parameter and s parameter as a string
                 Invoke(new SetReceiveBoxDelegate(SetReceiveBox), new object[] { s });
             else
                 receiveBox.Text += s;
         }
 
+        //the data handler
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
@@ -39,14 +44,51 @@ namespace FietsSimGui
             Console.WriteLine("Data Received:");
             Console.Write(indata);
             //receiveBox.Text += indata;
+
+            //invoke the SetReceiveBox method, with the received text
             this.SetReceiveBox(indata);
 
         }
 
+        //write text to the textBox
         private void sendText_Click_1(object sender, EventArgs e)
         {
             this.port.Write(this.textBox.Text);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //speed
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //rpm
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //distance
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //time
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //power
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //energy
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //pulse
         }
     }
 }

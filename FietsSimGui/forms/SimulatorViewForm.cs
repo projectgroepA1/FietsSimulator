@@ -36,18 +36,34 @@ namespace FietsSimGui
                 receiveBox.Text += s;
         }
 
+        //string buffer
+        private String buffer;
+
         //the data handler
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
-            Console.WriteLine("Data Received:");
+            //Console.Write("Data Received:");
             Console.Write(indata);
             //receiveBox.Text += indata;
 
+            char enter = '\u0013';
+
+            //must be the enter
+            if (indata.Equals(enter))
+            {
+                //flush
+                Console.WriteLine("Flush: " + buffer);
+                buffer = "";
+            }
+            else
+            {
+                buffer += indata;
+            }
+
             //invoke the SetReceiveBox method, with the received text
             this.SetReceiveBox(indata);
-
         }
 
         //write text to the textBox
@@ -59,6 +75,7 @@ namespace FietsSimGui
         private void button1_Click(object sender, EventArgs e)
         {
             //speed
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,7 +85,7 @@ namespace FietsSimGui
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //distance
+
         }
 
         private void button4_Click(object sender, EventArgs e)

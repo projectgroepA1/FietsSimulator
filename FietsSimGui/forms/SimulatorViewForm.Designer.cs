@@ -45,6 +45,9 @@
             this.power = new System.Windows.Forms.TextBox();
             this.energy = new System.Windows.Forms.TextBox();
             this.pulse = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.actualPower = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // receiveBox
@@ -152,6 +155,7 @@
             this.speedBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.speedBox.Size = new System.Drawing.Size(241, 31);
             this.speedBox.TabIndex = 16;
+            this.speedBox.Text = "20";
             // 
             // rpmBox
             // 
@@ -160,6 +164,7 @@
             this.rpmBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rpmBox.Size = new System.Drawing.Size(241, 31);
             this.rpmBox.TabIndex = 17;
+            this.rpmBox.Text = "100";
             // 
             // distance
             // 
@@ -168,6 +173,7 @@
             this.distance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.distance.Size = new System.Drawing.Size(241, 31);
             this.distance.TabIndex = 18;
+            this.distance.Text = "2";
             // 
             // time
             // 
@@ -176,6 +182,7 @@
             this.time.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.time.Size = new System.Drawing.Size(241, 31);
             this.time.TabIndex = 19;
+            this.time.Text = "2:00";
             // 
             // power
             // 
@@ -184,6 +191,7 @@
             this.power.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.power.Size = new System.Drawing.Size(241, 31);
             this.power.TabIndex = 20;
+            this.power.Text = "200";
             // 
             // energy
             // 
@@ -192,6 +200,7 @@
             this.energy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.energy.Size = new System.Drawing.Size(241, 31);
             this.energy.TabIndex = 21;
+            this.energy.Text = "400";
             // 
             // pulse
             // 
@@ -200,12 +209,46 @@
             this.pulse.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pulse.Size = new System.Drawing.Size(241, 31);
             this.pulse.TabIndex = 22;
+            this.pulse.Text = "0";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(273, 593);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(124, 39);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "random";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // actualPower
+            // 
+            this.actualPower.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.actualPower.Location = new System.Drawing.Point(26, 544);
+            this.actualPower.Name = "actualPower";
+            this.actualPower.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.actualPower.Size = new System.Drawing.Size(241, 31);
+            this.actualPower.TabIndex = 24;
+            this.actualPower.Text = "150";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(273, 544);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(197, 43);
+            this.button9.TabIndex = 25;
+            this.button9.Text = "Actual power";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // SimulatorViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 807);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.actualPower);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.pulse);
             this.Controls.Add(this.energy);
             this.Controls.Add(this.power);
@@ -249,5 +292,8 @@
         private System.Windows.Forms.TextBox power;
         private System.Windows.Forms.TextBox energy;
         private System.Windows.Forms.TextBox pulse;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox actualPower;
+        private System.Windows.Forms.Button button9;
     }
 }

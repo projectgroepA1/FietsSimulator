@@ -69,12 +69,13 @@ namespace FietsSimGui
         //write text to the textBox
         private void sendText_Click_1(object sender, EventArgs e)
         {
-            this.port.Write(this.textBox.Text);
+            WriteToPort();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //speed
+            this.port.WriteLine("write speed");
 
         }
 
@@ -106,6 +107,36 @@ namespace FietsSimGui
         private void button7_Click(object sender, EventArgs e)
         {
             //pulse
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //random button
+        }
+
+        private void WriteToPort()
+        {
+            String totalString = "";
+
+            //0       0       0       4       400     57      01:05   0
+            //pulse - rpm - speed - distance - requestpower - energy - tijd - actual power
+
+            totalString += this.pulse.Text + '\t';
+            totalString += this.rpmBox.Text + '\t';
+            totalString += this.speedBox.Text + '\t';
+            totalString += this.distance.Text + '\t';
+            totalString += this.power.Text + '\t';
+            totalString += this.energy.Text + '\t';
+            totalString += this.time.Text + '\t';
+            totalString += this.actualPower.Text + '\t';
+
+            this.port.WriteLine(totalString);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //actual power
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -45,10 +46,20 @@ namespace FietsSimGui
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
             //Console.Write("Data Received:");
-            Console.Write(indata);
+            Debug.Write("indate just received: " + indata);
             //receiveBox.Text += indata;
 
-            char enter = '\u0013';
+            string enter = "\u0013";
+
+            bool a = (indata == "ST\n");
+
+            if (a)
+            {
+               Debug.WriteLine("indata is ST");
+
+                sp.WriteLine("");
+
+            }
 
             //must be the enter
             if (indata.Equals(enter))

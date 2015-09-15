@@ -33,7 +33,6 @@ namespace FietsSimGui
             //open the port
             this.port.Open();
 
-            //this.port.Write("test");
             return this.port;
         }
     }
